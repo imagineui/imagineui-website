@@ -1,0 +1,214 @@
+/* ===== Base ===== */
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --primary: #7d3fff;
+    --primary-soft: rgba(125, 63, 255, 0.1);
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e5e7eb;
+    --radius: 14px;
+    --shadow-sm: 0 4px 12px rgba(0,0,0,.06);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,.12);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    opacity: 0.85;
+  }
+  
+  /* ===== Header ===== */
+  .page-header {
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-link a {
+    color: var(--text);
+    font-size: 15px;
+  }
+  
+  /* ===== Hero ===== */
+  .main-screen {
+    background: radial-gradient(
+      1200px 600px at 50% -200px,
+      var(--primary-soft),
+      transparent
+    );
+  }
+  
+  .page-title {
+    padding: 120px 0 60px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+  
+  .page-title span {
+    font-size: 20px;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  
+  /* ===== Demo ===== */
+  .demonstration {
+    padding-bottom: 80px;
+  }
+  
+  .demonstration-screen {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 520px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  
+  /* ===== Sections ===== */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 32px;
+  }
+  
+  .about {
+    padding: 96px 0;
+  }
+  
+  .about h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .about p {
+    text-align: center;
+    color: var(--muted);
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  /* ===== Gallery ===== */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 64px;
+  }
+  
+  .gallery-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  
+  .gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .gallery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .description {
+    padding: 24px;
+    text-align: center;
+  }
+  
+  .description span {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .description a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: white;
+  }
+  
+  /* ===== CLI ===== */
+  .cli {
+    background: var(--surface);
+    padding: 96px 0;
+    margin-top: 96px;
+  }
+  
+  .cli-code {
+    white-space: pre-line;
+    font-family: monospace!important;
+    background: #0f172a;
+    color: #e5e7eb;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 24px;
+    font-size: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    border-top: 1px solid var(--border);
+    background: white;
+    margin-top: 96px;
+  }
+
+  .gallery-card>.description>.for-small-devices { font-size: 16px; text-align: center; font-family: 'Roboto', sans-serif; padding: 16px 0 0 0; display: none; }
+  @media screen and (max-width: 1024px) { .gallery-card:hover .description>.for-small-devices { display: block; } }
