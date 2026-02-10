@@ -67,7 +67,7 @@ gettext_uuid = True
 gettext_location = False
 gettext_additional_targets = ['literal-block', 'image']
 
-imagineui = GherkinLexer()
+imagineui = GherkinLexer
 
 
 def setup(app: Sphinx):
